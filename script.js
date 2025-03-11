@@ -6,4 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
         star.style.left = Math.random() * window.innerWidth + "px";
         document.body.appendChild(star);
     }
+    
+    let mensaje = document.createElement("div");
+    mensaje.classList.add("mensaje");
+    mensaje.innerText = "Hola Mundo";
+    document.body.appendChild(mensaje);
 });
