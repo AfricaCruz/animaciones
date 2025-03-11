@@ -14,7 +14,7 @@ body {
     height: 50px;
     background-color: red;
     position: absolute;
-    animation: zigzag 4s infinite ease-in-out;
+    animation: zigzag 2s infinite ease-in-out, twinkle 1s infinite alternate;
 }
 
 @keyframes zigzag {
