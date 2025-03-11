@@ -3,9 +3,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #222;
+    background-color: #e7cbcb;
     margin: 0;
     overflow: hidden;
+    position: relative;
 }
 
 .cuadrado {
@@ -19,22 +20,42 @@ body {
 @keyframes zigzag {
     0% {
         transform: translateX(0) translateY(0) scale(1);
-        background-color: red;
+        background-color: rgb(226, 82, 181);
+        box-shadow: 0 0 10px rgba(226, 82, 181, 0.8);
     }
     25% {
         transform: translateX(100px) translateY(50px) scale(1.2);
-        background-color: blue;
+        background-color: rgb(95, 119, 196);
+        box-shadow: 0 0 20px rgba(95, 119, 196, 0.8);
     }
     50% {
         transform: translateX(200px) translateY(0) scale(1);
-        background-color: green;
+        background-color: rgb(140, 249, 140);
+        box-shadow: 0 0 30px rgba(140, 249, 140, 0.8);
     }
     75% {
         transform: translateX(300px) translateY(50px) scale(0.8);
-        background-color: yellow;
+        background-color: rgb(251, 251, 127);
+        box-shadow: 0 0 20px rgba(251, 251, 127, 0.8);
     }
     100% {
         transform: translateX(400px) translateY(0) scale(1);
-        background-color: red;
+        background-color: rgb(225, 112, 112);
+        box-shadow: 0 0 10px rgba(225, 112, 112, 0.8);
     }
 }
+
+.stars {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    box-shadow: 0 0 5px white;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.5); }
+}
+
