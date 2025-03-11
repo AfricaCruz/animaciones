@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let mensaje = document.createElement("div");
     mensaje.classList.add("mensaje");
     mensaje.innerText = "Hola Mundo";
-    document.body.appendChild(mensaje); 
-     let cuadrado = document.querySelector(".cuadrado");
+    document.body.appendChild(mensaje);
+
+    let cuadrado = document.querySelector(".cuadrado");
     if (cuadrado) {
         let observer = new MutationObserver(() => {
             let computedStyle = window.getComputedStyle(cuadrado);
