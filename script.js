@@ -11,13 +11,29 @@ document.addEventListener("DOMContentLoaded", function() {
     mensaje.classList.add("mensaje");
     mensaje.innerText = "Hola Mundo";
     document.body.appendChild(mensaje);
-
-    let cuadrado = document.querySelector(".cuadrado");
-    if (cuadrado) {
-        let observer = new MutationObserver(() => {
-            let computedStyle = window.getComputedStyle(cuadrado);
-            mensaje.style.transform = computedStyle.transform;
-        });
-        observer.observe(cuadrado, { attributes: true, attributeFilter: ['style'] });
-    }
-});
+    
+    // Animación zigzag
+    let positionX = 0;
+    let positionY = 0;
+    let directionX = 1;
+    let zigzagHeight = 50; // Altura del zigzag
+    let speed = 2;
+    
+    function animateZigzag() {
+        // Movimiento horizontal
+        positionX += speed * directionX;
+        
+        // Movimiento vertical en zigzag
+        positionY = Math.sin(positionX * 0.05) * zigzagHeight + window.innerHeight / 2;
+    
+        // Actualizar posición
+        mensaje.style.left = positionX + 'px';
+        mensaje.style.top = positionY + 'px';
+    
+        // Rebote en los bordes
+        if (positionX > window.innerWidth - mensaje.offsetWidth || positionX < 0) {
+            directionX *= -1;
+        }
+    
+        requestAnimationFrame(animateZigzag);
+    });

@@ -59,3 +59,10 @@ body {
     100% { opacity: 1; transform: scale(1.5); }
 }
 
+.mensaje {
+    position: absolute;
+    color: black; /* Cambia el color según tu fondo */
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    user-select: none; /* Para que no sea seleccionable */
+}
